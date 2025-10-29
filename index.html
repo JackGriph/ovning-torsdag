@@ -6,28 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>People Directory</title>
   <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-<header>
-  <nav class="navbar">
-    <div class="logo">Meny</div>
-    <button class="menu-btn" id="menu-btn">&#9776;</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#">Sort by first name</a></li>
-      <li><a href="#">Sort by last name</a></li>
-      <li><a href="#">Sort by age</a></li>
-      <li><a href="#">Sort by e-mail</a></li>
-      <li><a href="#">Filter by first name</a></li>
-      <li><a href="#">Filter by last name</a></li>
-      <li><a href="#">Filter by age</a></li>
-      <li><a href="#">Filter by e-mail</a></li>
-      <li><a href="#">Calculate age</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Meny</div>
+      <button class="menu-btn" id="menu-btn">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" id="sort-firstname">Sort by first name</a></li>
+        <li><a href="#" id="sort-lastname">Sort by last name</a></li>
+        <li><a href="#" id="sort-age">Sort by age</a></li>
+        <li><a href="#" id="sort-email">Sort by e-mail</a></li>
+        <li><a href="#" id="filter-firstname">Filter by first name</a></li>
+        <li><a href="#" id="filter-lastname">Filter by last name</a></li>
+        <li><a href="#" id="filter-age">Filter by age</a></li>
+        <li><a href="#" id="filter-email">Filter by e-mail</a></li>
+        <li><a href="#" id="show-age">Show ages</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <div class="page-title-container">
+    <h1 class="page-title">👥 Personregister</h1>
+    <p class="page-subtitle">Sök och hantera personer i databasen</p>
+  </div>
 
-  <input class="search-field" type="text" placeholder="Search by first name">
+  <div class="controls-container">
+    <input class="search-field" type="text" placeholder="Search by first name" id="search-field">
+
+    <div class="filter-controls" id="filter-controls" style="display: none;">
+      <label for="min-age">Min ålder:</label>
+      <input type="number" id="min-age" min="0" max="100" placeholder="0">
+
+      <label for="max-age">Max ålder:</label>
+      <input type="number" id="max-age" min="0" max="100" placeholder="100">
+
+      <button id="apply-age-filter">Använd filter</button>
+      <button id="clear-age-filter">Rensa filter</button>
+    </div>
+  </div>
   <article class="people"></article>
 
 
