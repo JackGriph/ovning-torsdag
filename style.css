@@ -70,6 +70,7 @@ body {
   margin: 0;
   list-style: none;
   min-width: 200px;
+  z-index: 1000;
 }
 
 .nav-links.active {
@@ -90,7 +91,8 @@ body {
 .nav-links a:hover {
   background-color: #f0f0f0;
   width: 98%;
-  padding: 16px 20px;
+  padding: 3px 3px;
+  /* minskat ner denna*/
   font-size: 1.1rem;
   border: none;
   border-radius: 12px;
@@ -101,6 +103,7 @@ body {
   font-family: inherit;
   margin: 10px
 }
+
 
 .search-field:focus {
   outline: none;

@@ -16,16 +16,16 @@ document.getElementById('calculateAge').addEventListener('click', function () {
         .then(response => {
             console.log('Response status:', response.status);
             console.log('Response ok:', response.ok);
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
+
             return response.json();
         })
         .then(people => {
             console.log('People loaded:', people.length);
-            
+
             // Find people born in the specified year
             const matchingPeople = people.filter(person => {
                 const personBirthYear = new Date(person.birthDate).getFullYear();
@@ -52,11 +52,11 @@ document.getElementById('calculateAge').addEventListener('click', function () {
                     const today = new Date();
                     let exactAge = today.getFullYear() - birthDate.getFullYear();
                     const monthDiff = today.getMonth() - birthDate.getMonth();
-                    
+
                     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
                         exactAge--;
                     }
-                    
+
                     html += `
                         <div class="person-card" style="border: 1px solid #ccc; margin: 10px 0; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
                             <div style="font-weight: bold; margin-bottom: 5px;">${person.firstName} ${person.lastName}</div>
